@@ -6,6 +6,7 @@ class Task {
   
     markAsCompleted() {
       this.completed = true;
+      return ("Tarea Completada");
     }
   
     displayTask() {

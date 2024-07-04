@@ -13,8 +13,12 @@ class TaskManager {
 
   markTaskAsCompleted(description) {
     const tarea = this.array.find(tarea => tarea.description === description);
-    tarea ? tarea.markAsCompleted() : null;
-    console.log(`Tarea del taskManager: \n ${tarea ? "Esta tarea existe" : "Esta tarea no existe"} \n`);
+    if(tarea) {
+      tarea.markAsCompleted();
+      console.log(`Esta tarea ${tarea.description} fue completada`)
+    } else {
+      console.log(`Esta tarea ${description} no existe y no fue completada`);
+    }
   }
 }
 
